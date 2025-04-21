@@ -19,7 +19,7 @@ def create_client(region_id: str) -> cms20190101Client:
     config = open_api_models.Config(
         access_key_id=os.environ['ALIBABA_CLOUD_ACCESS_KEY_ID'],
         access_key_secret=os.environ['ALIBABA_CLOUD_ACCESS_KEY_SECRET'],
-        user_agent='alibabacloud-mcp-server',
+        user_agent='alibaba-cloud-ops-mcp-server',
     )
     config.endpoint = f'metrics.{region_id}.aliyuncs.com'
     return cms20190101Client(config)

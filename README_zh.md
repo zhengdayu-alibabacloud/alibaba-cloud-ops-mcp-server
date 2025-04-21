@@ -1,4 +1,4 @@
-# alibabacloud-mcp-server
+# alibaba-cloud-ops-mcp-server
 
 ## 准备
 
@@ -14,13 +14,13 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 本地开发环境启动
 
 ```bash
-ALIBABA_CLOUD_ACCESS_KEY_ID=<你的AK> ALIBABA_CLOUD_ACCESS_KEY_SECRET=<你的SK> uv run src/alibabacloud_mcp_server/server.py --transport sse
+ALIBABA_CLOUD_ACCESS_KEY_ID=<你的AK> ALIBABA_CLOUD_ACCESS_KEY_SECRET=<你的SK> uv run src/alibaba_cloud_ops_mcp_server/server.py --transport sse
 ```
 
 安装包启动
 
 ```bash
-ALIBABA_CLOUD_ACCESS_KEY_ID=<你的AK> ALIBABA_CLOUD_ACCESS_KEY_SECRET=<你的SK> uvx alibabacloud-mcp-server@latest --transport sse
+ALIBABA_CLOUD_ACCESS_KEY_ID=<你的AK> ALIBABA_CLOUD_ACCESS_KEY_SECRET=<你的SK> uvx alibaba-cloud-ops-mcp-server@latest --transport sse
 ```
 
 ## 调试

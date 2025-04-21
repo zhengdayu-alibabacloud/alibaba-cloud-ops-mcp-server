@@ -1,6 +1,6 @@
 [project]
-name = "alibabacloud-mcp-server"
-version = "0.7.1"
+name = "alibaba-cloud-ops-mcp-server"
+version = "0.7.2"
 description = "A MCP server for Alibaba Cloud"
 readme = "README.md"
 authors = [
@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/alibabacloud_mcp_server"]
+packages = ["src/alibaba_cloud_ops_mcp_server"]
 
 [project.scripts]
-alibabacloud-mcp-server = "alibabacloud_mcp_server:main"
+alibaba-cloud-ops-mcp-server = "alibaba_cloud_ops_mcp_server:main"

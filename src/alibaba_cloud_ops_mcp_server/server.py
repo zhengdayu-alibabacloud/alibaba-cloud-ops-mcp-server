@@ -12,11 +12,11 @@ from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_openapi_util.client import Client as OpenApiUtilClient
-from alibabacloud_mcp_server.api_meta_client import ApiMetaClient
-from alibabacloud_mcp_server.config import config
+from alibaba_cloud_ops_mcp_server.api_meta_client import ApiMetaClient
+from alibaba_cloud_ops_mcp_server.config import config
 
-from alibabacloud_mcp_server import oos_tools
-from alibabacloud_mcp_server import cms_tools
+from alibaba_cloud_ops_mcp_server import oos_tools
+from alibaba_cloud_ops_mcp_server import cms_tools
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ def create_client(service: str, region_id: str) -> OpenApiClient:
     config = open_api_models.Config(
         access_key_id=os.environ['ALIBABA_CLOUD_ACCESS_KEY_ID'],
         access_key_secret=os.environ['ALIBABA_CLOUD_ACCESS_KEY_SECRET'],
-        user_agent='alibabacloud-mcp-server',
+        user_agent='alibaba-cloud-ops-mcp-server',
     )
     if isinstance(service, str):
         service = service.lower()
@@ -179,7 +179,7 @@ def create_and_decorate_tool(mcp: FastMCP, service: str, api: str):
 )
 def main(transport: str):
     # Create an MCP server
-    mcp = FastMCP("alibabacloud-mcp-server")
+    mcp = FastMCP("alibaba-cloud-ops-mcp-server")
     for tool in oos_tools.tools:
         mcp.add_tool(tool)
     for tool in cms_tools.tools:
