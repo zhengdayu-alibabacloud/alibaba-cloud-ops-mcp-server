@@ -9,25 +9,12 @@ Install [uv](https://github.com/astral-sh/uv)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-## Start
-
-Start from local development environment
-
-```bash
-ALIBABA_CLOUD_ACCESS_KEY_ID=<Your AccessKeyId> ALIBABA_CLOUD_ACCESS_KEY_SECRET=<Your AccessKeySecret> uv run src/alibaba_cloud_ops_mcp_server/server.py --transport sse
-```
-
-Start from package
-
-```bash
-ALIBABA_CLOUD_ACCESS_KEY_ID=<Your AccessKeyId> ALIBABA_CLOUD_ACCESS_KEY_SECRET=<Your AccessKeySecret> uvx alibaba-cloud-ops-mcp-server@latest --transport sse
-```
-
 ## Configuration
 
 Use [VS Code](https://code.visualstudio.com/) + [Cline](https://cline.bot/) to config MCP Server.
 
 To use `alibaba-cloud-ops-mcp-server` MCP Server with any other MCP Client, you can manually add this configuration and restart for changes to take effect:
+
 ```json
 {
   "mcpServers": {
