@@ -17,6 +17,7 @@ from alibaba_cloud_ops_mcp_server.config import config
 
 from alibaba_cloud_ops_mcp_server import oos_tools
 from alibaba_cloud_ops_mcp_server import cms_tools
+from alibaba_cloud_ops_mcp_server import oss_tools
 
 logger = logging.getLogger(__name__)
 
@@ -183,6 +184,8 @@ def main(transport: str):
     for tool in oos_tools.tools:
         mcp.add_tool(tool)
     for tool in cms_tools.tools:
+        mcp.add_tool(tool)
+    for tool in oss_tools.tools:
         mcp.add_tool(tool)
     for service_code, apis in config.items():
         for api_name in apis:

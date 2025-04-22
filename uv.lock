@@ -98,6 +98,29 @@ wheels = [
 ]
 
 [[package]]
+name = "alibaba-cloud-ops-mcp-server"
+version = "0.7.3"
+source = { editable = "." }
+dependencies = [
+    { name = "alibabacloud-cms20190101" },
+    { name = "alibabacloud-ecs20140526" },
+    { name = "alibabacloud-oos20190601" },
+    { name = "alibabacloud-oss-v2" },
+    { name = "click" },
+    { name = "mcp", extra = ["cli"] },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "alibabacloud-cms20190101", specifier = ">=3.1.4" },
+    { name = "alibabacloud-ecs20140526", specifier = ">=6.1.0" },
+    { name = "alibabacloud-oos20190601", specifier = ">=3.4.1" },
+    { name = "alibabacloud-oss-v2", specifier = ">=1.1.0" },
+    { name = "click", specifier = ">=8.1.8" },
+    { name = "mcp", extras = ["cli"], specifier = ">=1.6.0" },
+]
+
+[[package]]
 name = "alibabacloud-cms20190101"
 version = "3.1.4"
 source = { registry = "https://pypi.org/simple" }
@@ -164,27 +187,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ab/98/d7111245f17935bf72ee9bea60bbbeff2bc42cdfe24d2544db52bc517e1a/alibabacloud_gateway_spi-0.0.3.tar.gz", hash = "sha256:10d1c53a3fc5f87915fbd6b4985b98338a776e9b44a0263f56643c5048223b8b", size = 4249 }
 
 [[package]]
-name = "alibaba-cloud-ops-mcp-server"
-version = "0.7.0"
-source = { editable = "." }
-dependencies = [
-    { name = "alibabacloud-cms20190101" },
-    { name = "alibabacloud-ecs20140526" },
-    { name = "alibabacloud-oos20190601" },
-    { name = "click" },
-    { name = "mcp", extra = ["cli"] },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "alibabacloud-cms20190101", specifier = ">=3.1.4" },
-    { name = "alibabacloud-ecs20140526", specifier = ">=6.1.0" },
-    { name = "alibabacloud-oos20190601", specifier = ">=3.4.1" },
-    { name = "click", specifier = ">=8.1.8" },
-    { name = "mcp", extras = ["cli"], specifier = ">=1.6.0" },
-]
-
-[[package]]
 name = "alibabacloud-oos20190601"
 version = "3.4.1"
 source = { registry = "https://pypi.org/simple" }
@@ -208,6 +210,17 @@ dependencies = [
     { name = "cryptography" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/f6/50/5f41ab550d7874c623f6e992758429802c4b52a6804db437017e5387de33/alibabacloud_openapi_util-0.2.2.tar.gz", hash = "sha256:ebbc3906f554cb4bf8f513e43e8a33e8b6a3d4a0ef13617a0e14c3dda8ef52a8", size = 7201 }
+
+[[package]]
+name = "alibabacloud-oss-v2"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "crcmod-plus" },
+    { name = "pycryptodome" },
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b3/04/2d70ca3b95f6b2321d877a7b5b8ed88d81167ae442755ba4db25b80fd559/alibabacloud-oss-v2-1.1.0.tar.gz", hash = "sha256:5d1a1e9f9e0eefb7b4a33eabb3e91050c05fc0de63a953f2a0bb3605faa80b2b", size = 149409 }
 
 [[package]]
 name = "alibabacloud-tea"
@@ -415,6 +428,24 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44", size = 27697 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6", size = 25335 },
+]
+
+[[package]]
+name = "crcmod-plus"
+version = "2.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b1/4f/b899763daf22f9edd7311c204340b80aa8a24752fcd4b3b5b012730dbb5e/crcmod-plus-2.1.0.tar.gz", hash = "sha256:127b80e1fce7cc52ed6da5e4cb74e48cb29616ee90924f444c73d9480f356158", size = 22217 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c0/78/dc6c9dbc66056d9ddc3468b57a3e84f379cd4725b1eb7713955ba02a95f7/crcmod_plus-2.1.0-cp311-abi3-macosx_10_9_x86_64.whl", hash = "sha256:02599da985cf311aa1ab85628d2a75b7398140f04ab787d724c87ab324394f06", size = 20470 },
+    { url = "https://files.pythonhosted.org/packages/ad/a2/a863e358db48b62a531ff588a9dc8cf2d4ab4354d3b7b66509c86906b39b/crcmod_plus-2.1.0-cp311-abi3-macosx_11_0_arm64.whl", hash = "sha256:214a23e97b2eb899e261c354420caaa278e57e5ca9a13d0f7c20259ca9504940", size = 20238 },
+    { url = "https://files.pythonhosted.org/packages/16/c2/969b18efec0e2f223da81ba997a21a577413c644aefabbc04812955ce805/crcmod_plus-2.1.0-cp311-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:236688536040d4ba326381bd539c17af1067d2618decffd53dad1775abd55153", size = 27795 },
+    { url = "https://files.pythonhosted.org/packages/87/9a/06dca027d4816f50dfa456e2cfcb3cca469afdfcb6f9fa8e9996129a5df3/crcmod_plus-2.1.0-cp311-abi3-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:96301a0bd3f87c640f66fec3e8b0917552e0d7aca2bdab46bdd045aedd585277", size = 26981 },
+    { url = "https://files.pythonhosted.org/packages/23/99/32e16945f8babec3750a21da64a61b1c087bd918f19796382140e389a929/crcmod_plus-2.1.0-cp311-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:495cd1d136e5baaa554c8198fe716b46accf5cb393f89bf63c53cb3677517f22", size = 27694 },
+    { url = "https://files.pythonhosted.org/packages/8c/58/a4478b80293465d93f09905513a65b3c62238389eebdbd0b173fa9c88508/crcmod_plus-2.1.0-cp311-abi3-musllinux_1_1_aarch64.whl", hash = "sha256:3bd2eb8abc3028937f35d69147154dab48885801e54864419c0c48ccb9db428b", size = 29586 },
+    { url = "https://files.pythonhosted.org/packages/8b/ea/f40082b6b25ff95f7ef2e63114307388349a62d67038e1cdd0d1fda2635c/crcmod_plus-2.1.0-cp311-abi3-musllinux_1_1_i686.whl", hash = "sha256:8c1494721395ab044893fc383233d3c0f0312cc59345ae75c28a30cd6f24a43a", size = 29648 },
+    { url = "https://files.pythonhosted.org/packages/89/4d/524a7c5ddfb0fd1caa6314e8eae714cc1851ec643a32543c5e72ed00dcb7/crcmod_plus-2.1.0-cp311-abi3-musllinux_1_1_x86_64.whl", hash = "sha256:0617966720a323ea920c00d0cbdbc5dcf67c33414ea0d0062d4bdf77ab593338", size = 30003 },
+    { url = "https://files.pythonhosted.org/packages/6d/24/2d259e255f550f740779c3ee2d36ecf58cb1ee6ccd063a8fd621eeac705b/crcmod_plus-2.1.0-cp311-abi3-win32.whl", hash = "sha256:8ed10c5de2d804bac5366ace0c37a9c465c1409d6d93799e5f3deb1206940544", size = 22679 },
+    { url = "https://files.pythonhosted.org/packages/e2/5b/8b8f26cd2a0a0285c1457fc4577eea1cdbd3dde56c8989fe445aed7cf869/crcmod_plus-2.1.0-cp311-abi3-win_amd64.whl", hash = "sha256:8d2eb27d791dfd4bd35cccd2c2e963c73dc9bac29dba9f6a7376cf4f1033d0a2", size = 23257 },
 ]
 
 [[package]]
@@ -768,6 +799,24 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/1d/b2/31537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52c/pycparser-2.22.tar.gz", hash = "sha256:491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6", size = 172736 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl", hash = "sha256:c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc", size = 117552 },
+]
+
+[[package]]
+name = "pycryptodome"
+version = "3.22.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/44/e6/099310419df5ada522ff34ffc2f1a48a11b37fc6a76f51a6854c182dbd3e/pycryptodome-3.22.0.tar.gz", hash = "sha256:fd7ab568b3ad7b77c908d7c3f7e167ec5a8f035c64ff74f10d47a4edd043d723", size = 4917300 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1f/65/a05831c3e4bcd1bf6c2a034e399f74b3d6f30bb4e37e36b9c310c09dc8c0/pycryptodome-3.22.0-cp37-abi3-macosx_10_9_universal2.whl", hash = "sha256:009e1c80eea42401a5bd5983c4bab8d516aef22e014a4705622e24e6d9d703c6", size = 2490637 },
+    { url = "https://files.pythonhosted.org/packages/5c/76/ff3c2e7a60d17c080c4c6120ebaf60f38717cd387e77f84da4dcf7f64ff0/pycryptodome-3.22.0-cp37-abi3-macosx_10_9_x86_64.whl", hash = "sha256:3b76fa80daeff9519d7e9f6d9e40708f2fce36b9295a847f00624a08293f4f00", size = 1635372 },
+    { url = "https://files.pythonhosted.org/packages/cc/7f/cc5d6da0dbc36acd978d80a72b228e33aadaec9c4f91c93221166d8bdc05/pycryptodome-3.22.0-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a31fa5914b255ab62aac9265654292ce0404f6b66540a065f538466474baedbc", size = 2177456 },
+    { url = "https://files.pythonhosted.org/packages/92/65/35f5063e68790602d892ad36e35ac723147232a9084d1999630045c34593/pycryptodome-3.22.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a0092fd476701eeeb04df5cc509d8b739fa381583cda6a46ff0a60639b7cd70d", size = 2263744 },
+    { url = "https://files.pythonhosted.org/packages/cc/67/46acdd35b1081c3dbc72dc466b1b95b80d2f64cad3520f994a9b6c5c7d00/pycryptodome-3.22.0-cp37-abi3-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:18d5b0ddc7cf69231736d778bd3ae2b3efb681ae33b64b0c92fb4626bb48bb89", size = 2303356 },
+    { url = "https://files.pythonhosted.org/packages/3d/f9/a4f8a83384626098e3f55664519bec113002b9ef751887086ae63a53135a/pycryptodome-3.22.0-cp37-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:f6cf6aa36fcf463e622d2165a5ad9963b2762bebae2f632d719dfb8544903cf5", size = 2176714 },
+    { url = "https://files.pythonhosted.org/packages/88/65/e5f8c3a885f70a6e05c84844cd5542120576f4369158946e8cfc623a464d/pycryptodome-3.22.0-cp37-abi3-musllinux_1_2_i686.whl", hash = "sha256:aec7b40a7ea5af7c40f8837adf20a137d5e11a6eb202cde7e588a48fb2d871a8", size = 2337329 },
+    { url = "https://files.pythonhosted.org/packages/b8/2a/25e0be2b509c28375c7f75c7e8d8d060773f2cce4856a1654276e3202339/pycryptodome-3.22.0-cp37-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:d21c1eda2f42211f18a25db4eaf8056c94a8563cd39da3683f89fe0d881fb772", size = 2262255 },
+    { url = "https://files.pythonhosted.org/packages/41/58/60917bc4bbd91712e53ce04daf237a74a0ad731383a01288130672994328/pycryptodome-3.22.0-cp37-abi3-win32.whl", hash = "sha256:f02baa9f5e35934c6e8dcec91fcde96612bdefef6e442813b8ea34e82c84bbfb", size = 1763403 },
+    { url = "https://files.pythonhosted.org/packages/55/f4/244c621afcf7867e23f63cfd7a9630f14cfe946c9be7e566af6c3915bcde/pycryptodome-3.22.0-cp37-abi3-win_amd64.whl", hash = "sha256:d086aed307e96d40c23c42418cbbca22ecc0ab4a8a0e24f87932eeab26c08627", size = 1794568 },
 ]
 
 [[package]]

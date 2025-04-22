@@ -18,7 +18,10 @@ config = {
     'Vpc': [
         'DescribeVpcs',
         'DescribeVSwitches'
-    ]
+    ],
+    'rds': [
+        'DescribeDBInstances'
+    ],
 }
 
 

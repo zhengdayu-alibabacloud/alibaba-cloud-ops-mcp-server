@@ -50,8 +50,8 @@ def _start_execution_sync(region_id: str, template_name: str, parameters: dict):
 def RunCommand(
      RegionId: str = Field(description='AlibabaCloud region ID', default='cn-hangzhou'),
      InstanceIds: List[str] = Field(description='AlibabaCloud ECS instance ID List'),
-     CommandType: str = Field(description='ECS实例上执行的命令类型，可选值：RunShellScript，RunPythonScript，RunPerlScript，RunBatScript，RunPowerShellScript', default='RunShellScript'),
-     Command: str = Field(description='ECS实例上执行的命令内容'),
+     CommandType: str = Field(description='The type of command executed on the ECS instance, optional value：RunShellScript，RunPythonScript，RunPerlScript，RunBatScript，RunPowerShellScript', default='RunShellScript'),
+     Command: str = Field(description='Content of the command executed on the ECS instance'),
 ):
     """批量在多台ECS实例上运行云助手命令，适用于需要同时管理多台ECS实例的场景，如应用程序管理和资源标记操作等。"""
     
@@ -96,7 +96,7 @@ def StartInstances(
 def StopInstances(
      RegionId: str = Field(description='AlibabaCloud region ID', default='cn-hangzhou'),
      InstanceIds: List[str] = Field(description='AlibabaCloud ECS instance ID List'),
-     ForeceStop: bool = Field(description='是否强制关机', default=False),
+     ForeceStop: bool = Field(description='Is forced shutdown required', default=False),
 ):
     """批量停止ECS实例，适用于需要同时管理和停止多台ECS实例的场景。"""
     
@@ -117,7 +117,7 @@ def StopInstances(
 def RebootInstances(
      RegionId: str = Field(description='AlibabaCloud region ID', default='cn-hangzhou'),
      InstanceIds: List[str] = Field(description='AlibabaCloud ECS instance ID List'),
-     ForeceStop: bool = Field(description='是否强制关机', default=False),
+     ForeceStop: bool = Field(description='Is forced shutdown required', default=False),
 ):
     """批量重启ECS实例，适用于需要同时管理和重启多台ECS实例的场景。"""
     
@@ -137,12 +137,12 @@ def RebootInstances(
 @tools.append
 def RunInstances(
     RegionId: str = Field(description='AlibabaCloud region ID', default='cn-hangzhou'),
-    ImageId: str = Field(description='镜像ID'),
-    InstanceType: str = Field(description='实例规格'),
-    SecurityGroupId: str = Field(description='安全组ID'),
-    VSwitchId: str = Field(description='交换机ID'),
-    Amount: int = Field(description='创建数量', default=1),
-    InstanceName: str = Field(description='实例名称', default=''),
+    ImageId: str = Field(description='Image ID'),
+    InstanceType: str = Field(description='Instance Type'),
+    SecurityGroupId: str = Field(description='SecurityGroup ID'),
+    VSwitchId: str = Field(description='VSwitch ID'),
+    Amount: int = Field(description='Number of ECS instances', default=1),
+    InstanceName: str = Field(description='Instance Name', default=''),
 ):
     """批量创建ECS实例，适用于需要同时创建多台ECS实例的场景，例如应用部署和高可用性场景。"""
 
@@ -161,7 +161,7 @@ def RunInstances(
 def ResetPassword(
     RegionId: str = Field(description='AlibabaCloud region ID', default='cn-hangzhou'),
     InstanceIds: List[str] = Field(description='AlibabaCloud ECS instance ID List'),
-    Password: str = Field(description='ECS实例的密码,8-30个字符且只能包含以下限制条件中的字符：小写字母，大写字母，数字，只可包含特殊字符（）~！@#$%^&*-_+=（40：<>，？/'),
+    Password: str = Field(description='The password of the ECS instance must be 8-30 characters and must contain only the following characters: lowercase letters, uppercase letters, numbers, and special characters only.（）~！@#$%^&*-_+=（40：<>，？/'),
 ):
     """批量修改ECS实例的密码，请注意，本操作将会重启ECS实例"""
     parameters = {
@@ -180,7 +180,7 @@ def ResetPassword(
 def ReplaceSystemDisk(
         RegionId: str = Field(description='AlibabaCloud region ID', default='cn-hangzhou'),
         InstanceIds: List[str] = Field(description='AlibabaCloud ECS instance ID List'),
-        ImageId: str = Field(description='镜像ID')
+        ImageId: str = Field(description='Image ID')
 ):
     """批量替换ECS实例的系统盘，更换操作系统"""
     parameters = {
@@ -194,3 +194,61 @@ def ReplaceSystemDisk(
         'imageId': ImageId
     }
     return _start_execution_sync(region_id=RegionId, template_name='ACS-ECS-BulkyReplaceSystemDisk', parameters=parameters)
+
+
+@tools.append
+def StartRDSInstances(
+        RegionId: str = Field(description='AlibabaCloud region ID', default='cn-hangzhou'),
+        InstanceIds: List[str] = Field(description='AlibabaCloud ECS instance ID List'),
+):
+    """批量启动RDS实例，适用于需要同时管理和启动多台RDS实例的场景，例如应用部署和高可用性场景。"""
+
+    parameters = {
+        'regionId': RegionId,
+        'resourceType': 'ALIYUN::RDS::Instance',
+        'targets': {
+            'ResourceIds': InstanceIds,
+            'RegionId': RegionId,
+            'Type': 'ResourceIds'
+        }
+    }
+    return _start_execution_sync(region_id=RegionId, template_name='ACS-RDS-BulkyStartInstances', parameters=parameters)
+
+
+@tools.append
+def StopRDSInstances(
+        RegionId: str = Field(description='AlibabaCloud region ID', default='cn-hangzhou'),
+        InstanceIds: List[str] = Field(description='AlibabaCloud RDS instance ID List')
+):
+    """批量停止RDS实例，适用于需要同时管理和停止多台RDS实例的场景。"""
+
+    parameters = {
+        'regionId': RegionId,
+        'resourceType': 'ALIYUN::RDS::Instance',
+        'targets': {
+            'ResourceIds': InstanceIds,
+            'RegionId': RegionId,
+            'Type': 'ResourceIds'
+        }
+    }
+    return _start_execution_sync(region_id=RegionId, template_name='ACS-RDS-BulkyStopInstances', parameters=parameters)
+
+
+@tools.append
+def RebootRDSInstances(
+        RegionId: str = Field(description='AlibabaCloud region ID', default='cn-hangzhou'),
+        InstanceIds: List[str] = Field(description='AlibabaCloud RDS instance ID List')
+):
+    """批量重启RDS实例，适用于需要同时管理和重启多台RDS实例的场景。"""
+
+    parameters = {
+        'regionId': RegionId,
+        'resourceType': 'ALIYUN::RDS::Instance',
+        'targets': {
+            'ResourceIds': InstanceIds,
+            'RegionId': RegionId,
+            'Type': 'ResourceIds'
+        }
+    }
+    return _start_execution_sync(region_id=RegionId, template_name='ACS-RDS-BulkyRestartInstances',
+                                 parameters=parameters)
