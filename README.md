@@ -19,6 +19,7 @@ To use `alibaba-cloud-ops-mcp-server` MCP Server with any other MCP Client, you 
 {
   "mcpServers": {
     "alibaba-cloud-ops-mcp-server": {
+      "timeout": 600,
       "command": "uvx",
       "args": [
         "alibaba-cloud-ops-mcp-server@latest"
@@ -52,6 +53,14 @@ To use `alibaba-cloud-ops-mcp-server` MCP Server with any other MCP Client, you 
 | | ReplaceSystemDisk | Replace Operating System | OOS | Done |
 | VPC | DescribeVpcs | View VPCs | API | Done |
 | | DescribeVSwitches | View VSwitches | API | Done |
+| RDS | DescribeDBInstances | List RDS Instances | API | Done |
+|  | StartDBInstances | Start the RDS instance | OOS | Done |
+|  | StopDBInstances | Stop the RDS instance | OOS | Done |
+|  | RestartDBInstances | Restart the RDS instance | OOS | Done |
+| OSS | ListBuckets | List Bucket | API | Done |
+|  | PutBucket | Create Bucket | API | Done |
+|  | DeleteBucket | Delete Bucket | API | Done |
+|  | ListObjects | View object information in the bucket | API | Done |
 | CloudMonitor | GetCpuUsageData | Get CPU Usage Data for ECS Instances | API | Done |
 | | GetCpuLoadavgData | Get CPU One-Minute Average Load Metric Data | API | Done |
 | | GetCpuloadavg5mData | Get CPU Five-Minute Average Load Metric Data | API | Done |

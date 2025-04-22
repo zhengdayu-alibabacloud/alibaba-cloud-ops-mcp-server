@@ -19,6 +19,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 {
   "mcpServers": {
     "alibaba-cloud-ops-mcp-server": {
+      "timeout": 600,
       "command": "uvx",
       "args": [
         "alibaba-cloud-ops-mcp-server@latest"
@@ -52,6 +53,14 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 |  | ReplaceSystemDisk | 更换操作系统 | OOS | Done |
 | VPC | DescribeVpcs | 查看VPC | API | Done |
 |  | DescribeVSwitches | 查看VSwitch | API | Done |
+| RDS | DescribeDBInstances | 查询数据库实例列表 | API | Done |
+|  | StartDBInstances | 启动RDS实例 | OOS | Done |
+|  | StopDBInstances | 暂停RDS实例 | OOS | Done |
+|  | RestartDBInstances | 重启RDS实例 | OOS | Done |
+| OSS | ListBuckets | 查看存储空间 | API | Done |
+|  | PutBucket | 创建存储空间 | API | Done |
+|  | DeleteBucket | 删除存储空间 | API | Done |
+|  | ListObjects | 查看存储空间中的文件信息 | API | Done |
 | CloudMonitor | GetCpuUsageData | 获取ECS实例的CPU使用率数据 | API | Done |
 |  | GetCpuLoadavgData | 获取CPU一分钟平均负载指标数据 | API | Done |
 |  | GetCpuloadavg5mData | 获取CPU五分钟平均负载指标数据 | API | Done |
