@@ -1,5 +1,5 @@
 # alibaba-cloud-ops-mcp-server
-[中文版本](./README-zh.md)
+[中文版本](./README_zh.md)
 ## Prepare
 
 Install [uv](https://github.com/astral-sh/uv)
