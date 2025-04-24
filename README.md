@@ -70,3 +70,9 @@ To use `alibaba-cloud-ops-mcp-server` MCP Server with any other MCP Client, you 
 | | GetDiskUsageData | Get Disk Utilization Metric Data | API | Done |
 | | GetDiskTotalData | Get Total Disk Partition Capacity Metric Data | API | Done |
 | | GetDiskUsedData | Get Disk Partition Usage Metric Data | API | Done |
+
+## Contact us
+
+If you have any questions, please join the [Alibaba Cloud Ops MCP discussion group](https://qr.dingtalk.com/action/joingroup?code=v1,k1,iFxYG4jjLVh1jfmNAkkclji7CN5DSIdT+jvFsLyI60I=&_dt_no_comment=1&origin=11) (DingTalk group: 113455011677) for discussion.
+
+<img src="/image/Alibaba-Cloud-Ops-MCP-User-Group-en.png" width="500">
