@@ -18,6 +18,7 @@ from alibaba_cloud_ops_mcp_server.config import config
 from alibaba_cloud_ops_mcp_server import oos_tools
 from alibaba_cloud_ops_mcp_server import cms_tools
 from alibaba_cloud_ops_mcp_server import oss_tools
+from alibaba_cloud_ops_mcp_server import api_tools
 
 logger = logging.getLogger(__name__)
 
@@ -181,15 +182,17 @@ def create_and_decorate_tool(mcp: FastMCP, service: str, api: str):
 def main(transport: str):
     # Create an MCP server
     mcp = FastMCP("alibaba-cloud-ops-mcp-server")
-    for tool in oos_tools.tools:
+    # for tool in oos_tools.tools:
+    #     mcp.add_tool(tool)
+    # for tool in cms_tools.tools:
+    #     mcp.add_tool(tool)
+    # for tool in oss_tools.tools:
+    #     mcp.add_tool(tool)
+    # for service_code, apis in config.items():
+    #     for api_name in apis:
+    #         create_and_decorate_tool(mcp, service_code, api_name)
+    for tool in api_tools.tools:
         mcp.add_tool(tool)
-    for tool in cms_tools.tools:
-        mcp.add_tool(tool)
-    for tool in oss_tools.tools:
-        mcp.add_tool(tool)
-    for service_code, apis in config.items():
-        for api_name in apis:
-            create_and_decorate_tool(mcp, service_code, api_name)
 
     # Initialize and run the server
     logger.debug(f'mcp server is running on {transport} mode.')
