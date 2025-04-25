@@ -1,5 +1,11 @@
 # alibaba-cloud-ops-mcp-server
 
+A dynamic MCP server management service that creates, runs, and manages Model Context Protocol (MCP) servers dynamically. This service itself functions as an MCP server and launches/manages other MCP servers as child processes, enabling a flexible MCP ecosystem.
+
+<a href="https://glama.ai/mcp/servers/@aliyun/alibabacloud-core-mcp-server">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@aliyun/alibabacloud-core-mcp-server/badge" alt="AlibabaCloud Server MCP server" />
+</a>
+
 ## Prepare
 
 Install [uv](https://github.com/astral-sh/uv)
