@@ -1,5 +1,11 @@
 # alibaba-cloud-ops-mcp-server
+
 [中文版本](./README_zh.md)
+
+<a href="https://glama.ai/mcp/servers/@aliyun/alibabacloud-core-mcp-server">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@aliyun/alibabacloud-core-mcp-server/badge" alt="AlibabaCloud Server MCP server" />
+</a>
+
 ## Prepare
 
 Install [uv](https://github.com/astral-sh/uv)
