@@ -75,6 +75,10 @@ class ApiMetaClient:
         # 获取POP平台API META参考文档：https://api.aliyun.com/openmeta/guide
         version = cls.get_service_version(service)
         service_standard, api_standard = cls.get_standard_service_and_api(service, api, version)
+        if service_standard is None:
+            raise Exception(f'InvalidServiceName: Please check the Service ({service}) you provide.')
+        if api_standard is None:
+            raise Exception(f'InvalidAPIName: Please check the Service ({service}) and the API ({api}) you provide.')
         data = cls.get_response_from_pop_api(cls.GET_API_INFO, service_standard, api_standard, version)
         return data, version
 
