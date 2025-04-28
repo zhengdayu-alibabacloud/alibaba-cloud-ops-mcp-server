@@ -7,8 +7,6 @@ import time
 from alibabacloud_oos20190601.client import Client as oos20190601Client
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_oos20190601 import models as oos_20190601_models
-from alibabacloud_tea_util import models as util_models
-from alibabacloud_tea_util.client import Client as UtilClient
 
 
 END_STATUSES = ['Success', 'Failed', 'Cancelled']

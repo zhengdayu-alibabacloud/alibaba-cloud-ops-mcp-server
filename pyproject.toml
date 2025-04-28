@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Zheng Dayu", email = "dayu.zdy@alibaba-inc.com" }
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 dependencies = [
     "alibabacloud-cms20190101>=3.1.4",
     "alibabacloud-ecs20140526>=6.1.0",
