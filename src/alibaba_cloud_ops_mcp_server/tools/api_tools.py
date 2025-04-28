@@ -68,7 +68,7 @@ def _create_parameter_schema(fields: dict):
 def _create_function_schemas(service, api, api_meta):
     schemas = {}
     schemas[api] = {}
-    parameters = api_meta['parameters']
+    parameters = api_meta.get('parameters', [])
     for parameter in parameters:
         name = parameter.get('name')
         # TODO 目前忽略了带'.'的参数
