@@ -181,18 +181,27 @@ def create_and_decorate_tool(mcp: FastMCP, service: str, api: str):
 )
 def main(transport: str):
     # Create an MCP server
-    mcp = FastMCP("alibaba-cloud-ops-mcp-server")
-    # for tool in oos_tools.tools:
-    #     mcp.add_tool(tool)
-    # for tool in cms_tools.tools:
-    #     mcp.add_tool(tool)
-    # for tool in oss_tools.tools:
-    #     mcp.add_tool(tool)
-    # for service_code, apis in config.items():
-    #     for api_name in apis:
-    #         create_and_decorate_tool(mcp, service_code, api_name)
+    mcp = FastMCP("alibaba-cloud-ops-mcp-server",
+                  instructions='''
+                  使用本服务，请你务必遵循以下顺序：
+                  1、你需要优先调用prompt_understanding
+                  2、结合prompt_understanding来解析用户的意图，
+                  3、随后再根据分析选择合适的工具进行调用
+                  
+                  使用本服务提供的工具之前务必优先调用prompt_understanding。
+                  
+                  ''')
     for tool in api_tools.tools:
         mcp.add_tool(tool)
+    for tool in oos_tools.tools:
+        mcp.add_tool(tool)
+    for tool in cms_tools.tools:
+        mcp.add_tool(tool)
+    for tool in oss_tools.tools:
+        mcp.add_tool(tool)
+    for service_code, apis in config.items():
+        for api_name in apis:
+            create_and_decorate_tool(mcp, service_code, api_name)
 
     # Initialize and run the server
     logger.debug(f'mcp server is running on {transport} mode.')
