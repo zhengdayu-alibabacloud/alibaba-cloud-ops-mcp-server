@@ -2,10 +2,6 @@
 
 [中文版本](./README_zh.md)
 
-<a href="https://glama.ai/mcp/servers/@aliyun/alibabacloud-core-mcp-server">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/@aliyun/alibabacloud-core-mcp-server/badge" alt="AlibabaCloud Server MCP server" />
-</a>
-
 ## Prepare
 
 Install [uv](https://github.com/astral-sh/uv)
@@ -81,7 +77,7 @@ To use `alibaba-cloud-ops-mcp-server` MCP Server with any other MCP Client, you 
 
 If you have any questions, please join the [Alibaba Cloud Ops MCP discussion group](https://qr.dingtalk.com/action/joingroup?code=v1,k1,iFxYG4jjLVh1jfmNAkkclji7CN5DSIdT+jvFsLyI60I=&_dt_no_comment=1&origin=11) (DingTalk group: 113455011677) for discussion.
 
-<img src="https://github.com/aliyun/alibaba-cloud-ops-mcp-server/blob/master/image/Alibaba-Cloud-Ops-MCP-User-Group-en.png?raw=true" width="500">
+<img src="https://oos-public-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com/alibaba-cloud-ops-mcp-server/Alibaba-Cloud-Ops-MCP-User-Group-en.png" width="500">
 
 ## Know More
 
